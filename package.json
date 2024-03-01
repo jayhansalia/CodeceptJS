@@ -1,0 +1,24 @@
+{
+  "name": "codeceptjsproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-codeceptjs": "^2.12.2",
+    "allure-commandline": "^2.27.0",
+    "codeceptjs": "^3.5.13",
+    "webdriverio": "^8.32.2"
+  },
+  "dependencies": {
+    "allure": "^0.0.0",
+    "allure-patch": "^1.0.3",
+    "codeceptjs-assert": "^0.0.5",
+    "extent": "^0.4.0"
+  }
+}
