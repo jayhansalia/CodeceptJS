@@ -16,17 +16,17 @@ class MostReadPage {
     I.dontSeeElement(this.mostReadSectionElement);
   }
 
-  async verifyMostReadSectionHas10Articles() {
+  async verifyMostReadSectionHas10Articles(number) {
     let numOfElements = await I.grabNumberOfVisibleElements(this.numberOfArticles);
-    I.assert(numOfElements, 10);
+    I.assert(numOfElements, number);
   }
 
-  verifyBypassBlockMenuItemOption() {
+  verifyBypassBlockMenuItemOption(value) {
     I.click(this.siteLogo);
     I.pressKey('Tab')
     I.waitForElement(this.menuItem);
     I.click(this.menuItem);
-    I.seeInCurrentUrl('#most-read-container');
+    I.seeInCurrentUrl(value);
   }
 }
 

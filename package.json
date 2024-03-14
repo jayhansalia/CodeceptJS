@@ -4,21 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm update browserstack-node-sdk"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@codeceptjs/configure": "^1.0.1",
+    "@wdio/browserstack-service": "^8.33.1",
+    "@wdio/cli": "^7.36.0",
     "allure-codeceptjs": "^2.12.2",
     "allure-commandline": "^2.27.0",
     "codeceptjs": "^3.5.13",
-    "webdriverio": "^8.32.2"
+    "codeceptjs-browserstack": "^0.0.1-security",
+    "webdriverio": "^8.33.1",
+    "browserstack-node-sdk": "latest"
   },
   "dependencies": {
     "allure": "^0.0.0",
     "allure-patch": "^1.0.3",
     "codeceptjs-assert": "^0.0.5",
+    "codeceptjs-saucelabs": "^5.3.2",
     "extent": "^0.4.0"
   }
 }

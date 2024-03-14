@@ -1,3 +1,5 @@
+// const { WebDriverIO } = require('@codeceptjs/webdriverio');
+
 exports.config = {
   output: './output',
   helpers: {
@@ -8,7 +10,19 @@ exports.config = {
       timeouts: {
         "script": 60000,
         "page load": 10000
-      }
+      },
+      user: process.env.BROWSERSTACK_USERNAME,
+      key: process.env.BROWSERSTACK_ACCESS_KEY,
+      services: [
+        ['browserstack', {
+          testObservability: true,
+          testObservabilityOptions: {
+            projectName: "CodeceptJS Project",
+            buildName: "Regression"
+          },
+          browserstackLocal: true
+        }]
+      ],
     },
     "AssertWrapper": {
       "require": "codeceptjs-assert"
@@ -17,6 +31,23 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
+
+  // async bootstrapAll() {
+  //   console.log('Run bootstrapAll');
+  // },
+
+  // async bootstrap() {
+  //   console.log('Run bootstrap');
+  // },
+
+  // async teardown() {
+  //   console.log('Run teardown');
+  // },
+
+  // async teardownAll() {
+  //   console.log('Run teardownAll');
+  // },
+
   mocha: {},
   bootstrap: null,
   timeout: null,
@@ -24,7 +55,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/steps.js'],
+    steps: './step_definitions/*.js',
   },
   plugins: {
     screenshotOnFail: {
